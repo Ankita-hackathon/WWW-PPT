@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walk With World - Sponsorship Pitch Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #d5dde6 0%, #34495e 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .pitch-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .slide {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            margin: 40px 0;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .slide:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 35px 70px rgba(0,0,0,0.2);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #3498db, #2980b9, #1f4e79, #34495e);
+        }
+
+        .title-slide {
+            background: linear-gradient(135deg, #3d4955 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title-slide img {
+            display: block;
+            margin: 0 auto 30px auto;
+        }
+
+        .title-slide h1 {
+            font-size: 4.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .title-slide .subtitle {
+            font-size: 1.8em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #07032c85;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #34495e;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            color:  #34495e;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+            align-items: stretch;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #2980b9, #1f4e79);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 180px;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.08);
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+     /* Container for the 3 value cards */
+.value-props {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+/* Top 2 cards in one row */
+.top-row {
+    display: flex;
+    gap: 25px;
+}
+
+/* Bottom card centered */
+.bottom-row {
+    display: flex;
+    justify-content: center;
+}
+
+/* Individual card styles */
+.value-card {
+    flex: 1;
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 20px;
+}
+
+/* Centered bottom card has fixed max width */
+.value-card.single {
+    max-width: 60%;
+}
+
+.value-card h3 {
+    font-size: 1.9em; /* increased from default 1.8em */
+    color: white;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.value-card p {
+    font-size: 1.2em;  /* increased from default */
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 1.6;  /* for better readability */
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .top-row {
+        flex-direction: column;
+    }
+
+    .value-card.single {
+        max-width: 100%;
+    }
+}
+
+        .sponsors-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+            align-items: stretch;
+        }
+
+        .sponsor-category {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #3498db;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 200px;
+        }
+
+        .sponsor-category h3 {
+            margin-bottom: 20px;
+        }
+
+        .sponsor-category ul {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .sponsor-category li {
+            padding: 8px 0;
+            font-size: 1.1em;
+        }
+
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+            align-items: stretch;
+        }
+
+        .package-card {
+            background: linear-gradient(135deg, #2980b9, #1f4e79);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 450px;
+        }
+
+        .package-card.featured {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            transform: scale(1.02);
+            border: 3px solid #fff;
+        }
+
+        .package-price {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-size: 1.05em;
+        }
+
+        .feature-list li:before {
+            content: '✓';
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .impact-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .metric-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .metric-circle .number {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #ecf0f1, #bdc3c7);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            color: #2c3e50;
+        }
+
+        .testimonial:before {
+            content: '"';
+            font-size: 4em;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            color: #34495e;
+            opacity: 0.3;
+        }
+
+        .contact-cta {
+            background: linear-gradient(135deg, #5079a1, #34495e);
+            color: white;
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            margin: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+
+        .roi-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+            align-items: stretch;
+        }
+
+        .roi-card {
+            background: white;
+            border: 2px solid #3498db;
+            padding: 30px 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 220px;
+        }
+
+        .roi-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .roi-card p {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .roi-card:hover {
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.2);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .title-slide h1 {
+                font-size: 3em;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .value-props {
+                grid-template-columns: 1fr;
+            }
+            
+            .sponsors-showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            .packages-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .roi-showcase {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .impact-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .metric-circle {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pitch-container">
+        <!-- Title Slide -->
+        <div class="slide title-slide">
+            <img src="WWW Logo.jpg"  width="170" height="170">
+            <h1>Walk With World</h1>
+            <div class="subtitle">KIT College of Engineering</div>
+            <div class="subtitle">IIT BOMBAY Awarded Concept | Since 2012</div>
+            <div class="subtitle">Sponsorship Opportunity | ABHIGYAN 2025</div>
+        </div>
+
+               <!-- Who We Are -->
+        <div class="slide">
+            <h2>🌟 Who We Are</h2>
+            
+            <div class="highlight-box">
+                <h3>Walk With World - Transforming Student Lives</h3>
+                <p style="font-size: 1.2em; line-height: 1.6;">
+                    Founded in 2012, Walk With World is an <strong>IIT Bombay accredited</strong> student organization dedicated to holistic student development. We bridge the gap between academic learning and real-world skills through innovative conferences, workshops, and networking opportunities.
+                </p>
+            </div>
+
+            <div class="value-props">
+                <div class="value-card">
+                    <h3>🎯 Our Mission</h3>
+                    <p>Empowering students with essential life skills, leadership qualities, and professional networks that traditional education often overlooks.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h3>🚀 Our Vision</h3>
+                    <p>To create a generation of well-rounded individuals who are equipped to tackle global challenges with confidence and competence.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h3>💡 Our Approach</h3>
+                    <p>Interactive conferences featuring renowned personalities, hands-on workshops, and peer-to-peer learning experiences.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Our Impact -->
+        <div class="slide">
+            <h2>📈 Our Track Record & Impact</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">12+</span>
+                    <div>Years of Excellence</div>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-number">3000+</span>
+                    <div>Students Impacted</div>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-number">25+</span>
+                    <div>Industry Experts</div>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-number">15+</span>
+                    <div>Successful Events</div>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-number">5+</span>
+                    <div>College Networks</div>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-number">95%</span>
+                    <div>Participant Satisfaction</div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p style="font-size: 1.3em; font-style: italic;">
+                    "Walk With World's ABHIGYAN conference was a game-changer for my career. The networking opportunities and insights from industry leaders gave me the confidence to start my own venture."
+                </p>
+                <p style="margin-top: 15px;"><strong>- Priya Sharma, Entrepreneur & ABHIGYAN 2023 Attendee</strong></p>
+            </div>
+        </div>
+
+        <!-- ABHIGYAN Flagship Event -->
+        <div class="slide">
+            <h2>🎓 ABHIGYAN - Our Flagship Event</h2>
+            
+            <div class="highlight-box">
+                <h3>ABHIGYAN - Our Proven Process</h3>
+                <p style="font-size: 1.2em;">ABHIGYAN follows a meticulously planned 7-week process featuring distinguished guests from diverse domains who ensure maximum impact and professional execution:</p>
+                <p style="margin-top: 15px; font-size: 1.1em;">
+                    <strong>Guest Categories:</strong> Sports, Politics, Entertainment, Social Media, Technology, Education, Health & Wellness, Environment, Business & Entrepreneurship, Art & Culture, Celebrity, Army Officers, Police Officers, Instagram Influencers
+                </p>
+            </div>
+
+            <div class="value-props">
+                <div class="value-card">
+                    <h3>🎬 Celebrity Prelaunch</h3>
+                    <p>Distinguished guests from film industry, sports, politics, and other domains reveal the official poster, creating massive buzz and media coverage.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h3>👥 Strategic Team Building</h3>
+                    <p>Rigorous interview process for FY volunteers and SY managers ensures professional event execution with quality standards.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h3>📝 Structured Registration</h3>
+                    <p>3-week registration phase with parallel sponsorship drive maximizes participation and ensures comprehensive funding.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h3>🏆 Professional Execution</h3>
+                    <p>Final week dedicated to decoration and setup ensures a premium conference experience with eminent personalities from various fields.</p>
+                </div>
+            </div>
+
+            <div class="impact-metrics">
+                <div class="metric-circle">
+                    <div class="number">7</div>
+                    <div>Week Process</div>
+                </div>
+                
+                <div class="metric-circle">
+                    <div class="number">2</div>
+                    <div>Major Events</div>
+                </div>
+                
+                <div class="metric-circle">
+                    <div class="number">3</div>
+                    <div>Week Registration</div>
+                </div>
+                
+                <div class="metric-circle">
+                    <div class="number">50+</div>
+                    <div>Team Members</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Past Sponsors -->
+        <div class="slide">
+            <h2>🤝 Our Esteemed Partners</h2>
+            
+            <div class="sponsors-showcase">
+                <div class="sponsor-category">
+                    <h3>🏢 Technology Partners</h3>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li>• Leading Software Companies</li>
+                        <li>• Tech Startups & Unicorns</li>
+                        <li>• EdTech Platforms</li>
+                    </ul>
+                </div>
+                
+                <div class="sponsor-category">
+                    <h3>🏦 Financial Services</h3>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li>• Major Banking Institutions</li>
+                        <li>• FinTech Companies</li>
+                        <li>• Investment Firms</li>
+                    </ul>
+                </div>
+                
+                <div class="sponsor-category">
+                    <h3>📚 Educational Partners</h3>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li>• Online Learning Platforms</li>
+                        <li>• Skill Development Companies</li>
+                        <li>• Professional Certification Bodies</li>
+                    </ul>
+                </div>
+                
+                <div class="sponsor-category">
+                    <h3>🛍️ Consumer Brands</h3>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li>• FMCG Companies</li>
+                        <li>• Fashion & Lifestyle Brands</li>
+                        <li>• Food & Beverage Companies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p style="font-size: 1.2em; font-style: italic;">
+                    "Partnering with Walk With World for ABHIGYAN gave our brand incredible visibility among the target demographic. The quality of engagement and the professional execution exceeded our expectations."
+                </p>
+                <p style="margin-top: 15px;"><strong>- Marketing Director, Previous Title Sponsor</strong></p>
+            </div>
+        </div>
+
+        <!-- Why Partner With Us -->
+        <div class="slide">
+            <h2>💪 Why Partner With Walk With World?</h2>
+            
+            <div class="roi-showcase">
+                <div class="roi-card">
+                    <h3>🎬 Prelaunch Visibility</h3>
+                    <p>Celebrity guest association with your brand during poster reveal, creating massive social media buzz and media coverage.</p>
+                </div>
+                
+                <div class="roi-card">
+                    <h3>📝 Registration Phase Exposure</h3>
+                    <p>3-week continuous promotion during registration drive ensures sustained brand visibility among target audience.</p>
+                </div>
+                
+                <div class="roi-card">
+                    <h3>👥 Quality Team Association</h3>
+                    <p>Professional event execution by carefully selected volunteers and managers reflects positively on your brand.</p>
+                </div>
+                
+                <div class="roi-card">
+                    <h3>🌟 Diverse Guest Network</h3>
+                    <p>Association with eminent personalities from sports, politics, entertainment, technology, and business domains.</p>
+                </div>
+                
+                <div class="roi-card">
+                    <h3>📈 Proven Process ROI</h3>
+                    <p>12+ years of refined execution ensures consistent delivery of promised brand exposure and engagement.</p>
+                </div>
+                
+                <div class="roi-card">
+                    <h3>🎪 Premium Event Experience</h3>
+                    <p>Professional decoration and setup in final week creates a premium environment for your brand showcase.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🔥 Unique Value Proposition</h3>
+                <p style="font-size: 1.2em;">Unlike typical college events, ABHIGYAN focuses on <strong>quality over quantity</strong>. Our carefully curated audience of serious, career-focused students ensures your marketing investment reaches individuals who are actively seeking professional development and are likely to become loyal customers or valuable employees.</p>
+            </div>
+        </div>
+
+        <!-- Sponsorship Packages -->
+        <div class="slide">
+            <h2>📦 Sponsorship Packages</h2>
+            
+            <div class="packages-container">
+                <div class="package-card">
+                    <h3>🥉 Bronze Partner</h3>
+                    <div class="package-price">₹25,000</div>
+                    <ul class="feature-list">
+                        <li>Logo on all promotional materials</li>
+                        <li>Social media mentions</li>
+                        <li>Promotional stall space</li>
+                        <li>2 complimentary passes</li>
+                        <li>Certificate distribution opportunity</li>
+                    </ul>
+                </div>
+                
+                <div class="package-card">
+                    <h3>🥈 Silver Partner</h3>
+                    <div class="package-price">₹50,000</div>
+                    <ul class="feature-list">
+                        <li>All Bronze benefits</li>
+                        <li>Speaking opportunity (10 mins)</li>
+                        <li>Premium stall location</li>
+                        <li>4 complimentary passes</li>
+                        <li>Branded giveaways distribution</li>
+                        <li>LinkedIn post features</li>
+                    </ul>
+                </div>
+                
+                <div class="package-card featured">
+                    <h3>🥇 Gold Partner</h3>
+                    <div class="package-price">₹1,00,000</div>
+                    <ul class="feature-list">
+                        <li>All Silver benefits</li>
+                        <li>Keynote speaking slot (20 mins)</li>
+                        <li>Logo on stage backdrop</li>
+                        <li>6 complimentary passes</li>
+                        <li>Dedicated social media campaign</li>
+                        <li>Video testimonial opportunity</li>
+                        <li>Post-event attendee database</li>
+                    </ul>
+                </div>
+                
+                <div class="package-card">
+                    <h3>💎 Title Sponsor</h3>
+                    <div class="package-price">₹2,00,000</div>
+                    <ul class="feature-list">
+                        <li>Event naming rights</li>
+                        <li>All Gold benefits</li>
+                        <li>Opening ceremony address</li>
+                        <li>10 complimentary passes</li>
+                        <li>Exclusive networking session</li>
+                        <li>Professional video coverage</li>
+                        <li>Year-long partnership benefits</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROI & Measurable Outcomes -->
+        <div class="slide">
+            <h2>📊 Your Return on Investment</h2>
+            
+            <div class="impact-metrics">
+                <div class="metric-circle">
+                    <div class="number">₹10</div>
+                    <div>Cost per impression</div>
+                </div>
+                
+                <div class="metric-circle">
+                    <div class="number">85%</div>
+                    <div>Brand recall rate</div>
+                </div>
+                
+                <div class="metric-circle">
+                    <div class="number">60%</div>
+                    <div>Lead conversion</div>
+                </div>
+                
+                <div class="metric-circle">
+                    <div class="number">12</div>
+                    <div>Months of visibility</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>📈 Measurable Outcomes We Deliver</h3>
+                <ul style="list-style-type: none; padding: 0; font-size: 1.1em;">
+                    <li>✅ <strong>Brand Awareness:</strong> Detailed reach and engagement analytics</li>
+                    <li>✅ <strong>Lead Generation:</strong> Qualified student database for recruitment</li>
+                    <li>✅ <strong>Content Assets:</strong> Professional photos, videos, and testimonials</li>
+                    <li>✅ <strong>Market Research:</strong> Student preferences and behavior insights</li>
+                    <li>✅ <strong>Network Expansion:</strong> Connections with other industry leaders</li>
+                </ul>
+            </div>
+
+            <div class="testimonial">
+                <p style="font-size: 1.2em; font-style: italic;">
+                    "The ROI from our ABHIGYAN sponsorship was exceptional. We recruited 5 exceptional interns, generated 200+ leads, and our brand awareness among students increased by 40% in the target demographic."
+                </p>
+                <p style="margin-top: 15px;"><strong>- HR Director, Previous Gold Sponsor</strong></p>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="slide">
+            <div class="contact-cta">
+                <h2>🤝 Partnership Opportunity</h2>
+                <p style="font-size: 1.3em; margin: 30px 0; line-height: 1.6;">
+                    Partner with Walk With World for ABHIGYAN 2025 and associate your brand with excellence in student development.
+                    Join us in creating meaningful impact through quality education and professional growth.
+                </p>
+                
+                <div style="margin: 40px 0;">
+                    <a href="#" class="cta-button">Partner With Us</a>
+                    <a href="#" class="cta-button">Schedule a Meeting</a>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; margin-top: 40px;">
+                    <h3>📞 Contact Information</h3>
+                    <p style="font-size: 1.1em; margin: 15px 0;">
+                        <strong>Email:</strong> partnerships@walkwithworld.org<br>
+                        <strong>Phone:</strong> +91-XXXXX-XXXXX<br>
+                        <strong>Website:</strong> www.walkwithworld.org
+                    </p>
+                    
+                    <p style="margin-top: 25px; font-size: 1.1em;">
+                        <strong>Timeline:</strong> Partnership confirmation needed by [Date]<br>
+                        <strong>Event Date:</strong> [ABHIGYAN 2025 Date]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth animations and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate statistics on scroll
+            const statCards = document.querySelectorAll('.stat-card');
+            const metricCircles = document.querySelectorAll('.metric-circle');
+            
+            function animateValue(element, start, end, duration) {
+                let startTime = null;
+                const startValue = parseInt(start);
+                const endValue = parseInt(end);
+                
+                function animate(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const progress = Math.min(timeElapsed / duration, 1);
+                    
+                    const currentValue = Math.floor(progress * (endValue - startValue) + startValue);
+                    element.textContent = currentValue + (end.includes('+') ? '+' : '') + (end.includes('%') ? '%' : '');
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    }
+                }
+                
+                requestAnimationFrame(animate);
+            }
+            
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statNumber = entry.target.querySelector('.stat-number, .number');
+                        if (statNumber && !statNumber.dataset.animated) {
+                            const endValue = statNumber.textContent;
+                            statNumber.dataset.animated = 'true';
+                            animateValue(statNumber, '0', endValue, 2000);
+                        }
+                    }
+                });
+            });
+            
+            [...statCards, ...metricCircles].forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.value-card, .roi-card, .package-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
